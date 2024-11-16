@@ -1,10 +1,10 @@
 {
-  "name": "module-name",
-  "version": "0.1.0-beta.1",
+  "name": "@crimson206/markdown-prism-code-plugin",
+  "version": "0.1.0",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/crimson206/{repository}.git",
+  "repository": "https://github.com/crimson206/markdown-prism-code-plugin.git",
   "author": "crimson206 <sisung.kim1@gmail.com>",
   "license": "MIT",
   "publishConfig": {
@@ -19,7 +19,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "storybook:publish": "yarn build-storybook && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true",
+    "remove-blog": "git push origin --delete gh-pages"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -30,10 +34,13 @@
     "@storybook/react-vite": "^8.1.4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react": "^4.3.3",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "storybook": "^8.1.4",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
-    "vite-plugin-dts": "^4.3.0",
-    "storybook": "^8.1.4"
+    "vite-plugin-dts": "^4.3.0"
   }
 }
